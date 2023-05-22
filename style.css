@@ -3,11 +3,10 @@
 }
 
 body {
-  background-color: #f5f5f7;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
 
 .main-wrapper {
@@ -35,44 +34,13 @@ img {
   font-weight: 300;
 }
 
-.instagram {
-  font-size: 4rem;
-  margin: 0;
-  background: -moz-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .slide {
   position: relative;
-  width: 170px;
-  margin: 20px auto;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: auto;
   display: grid;
-  height: 360px;
-  padding: 00px 0;
   overflow: hidden;
 }
 

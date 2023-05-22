@@ -1,0 +1,31 @@
+[
+  {
+    "channelName": "מערכת המשפט",
+    "stories": [
+      {
+        "video": null,
+        "img": {
+          "src": "https://i0.wp.com/macmagazine.com.br/wp-content/uploads/2018/09/14-wall-iphonexs02.png?ssl=1",
+          "alt": "Img 1"
+        },
+        "like": false
+      },
+      {
+        "video": null,
+        "img": {
+          "src": "https://www.iclarified.com/images/news/86246/417032/417032.jpg",
+          "alt": "Img 2"
+        },
+        "like": false
+      },
+      {
+        "video": null,
+        "img": {
+          "src": "https://lh3.googleusercontent.com/pw/AM-JKLV-k3_D29YpRF2UMv3ProFuZieWwCfTkelEfR9lajJv6JQQybWY_CgwvMfaWDZgruIhhwm0Lv6s_cMlyAfDaMBpBvtQztS-6szLEDYUuGQoOnnndLcvbCFWO_ae7NVScBrSWyYoMXevFltarjBlBWHQ=w279-h603-no",
+          "alt": "Img 3"
+        },
+        "like": false
+      }
+    ]
+  }
+]

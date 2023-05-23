@@ -1,6 +1,10 @@
 [
   {
-    "channelName": "מערכת המשפט",
+    "user": {
+      "name": "מערכת המשפט",
+      "avatar": ""
+    },
+    "storiesLength": 3,
     "stories": [
       {
         "video": null,
@@ -8,7 +12,10 @@
           "src": "https://i0.wp.com/macmagazine.com.br/wp-content/uploads/2018/09/14-wall-iphonexs02.png?ssl=1",
           "alt": "Img 1"
         },
-        "like": false
+        "like": false,
+        "optional": {
+          "showBgFooter": false
+        }
       },
       {
         "video": null,

@@ -14,17 +14,6 @@ img {
   display: block;
 }
 
-footer {
-  padding: 19px 25px;
-  background-color: #fcfeffb8;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-}
-
 /* general styling */
 .rnd-btn {
   background-color: white;
@@ -160,15 +149,29 @@ footer {
   animation: thumb 5s forwards linear;
 }
 
+@keyframes thumb {
+  to {
+    transform: initial;
+  }
+}
+
+/* footer */
+
+footer {
+  padding: 19px 25px;
+  background-color: #fcfeffb8;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
 .footer-container {
   max-width: 900px;
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
-}
-
-@keyframes thumb {
-  to {
-    transform: initial;
-  }
 }

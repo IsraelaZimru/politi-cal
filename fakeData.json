@@ -2,42 +2,54 @@
   {
     "user": {
       "name": "מערכת המשפט",
-      "avatar": "https://cdn.onlinewebfonts.com/svg/img_173956.png"
+      "avatar": "./images/avatar.svg"
     },
     "storiesLength": 3,
     "stories": [
       {
-        "video": null,
+        "video": {
+          "src": null,
+          "thumbnail": ""
+        },
         "img": {
           "src": "https://www.chayot-barama.co.il/wp-content/uploads/2020/09/rodents_cat-1.jpg",
           "alt": "Img 0"
         },
         "like": false,
+        "alreadyWatched": false,
         "optional": {
           "showBgFooter": false
         }
       },
       {
-        "video": null,
+        "video": {
+          "src": null,
+          "thumbnail": ""
+        },
         "img": {
           "src": "https://i0.wp.com/macmagazine.com.br/wp-content/uploads/2018/09/14-wall-iphonexs02.png?ssl=1",
           "alt": "Img 1"
         },
         "like": false,
-        "optional": {
-          "showBgFooter": false
-        }
+        "alreadyWatched": false
       },
       {
-        "video": null,
+        "video": {
+          "src": null,
+          "thumbnail": ""
+        },
         "img": {
           "src": "https://www.iclarified.com/images/news/86246/417032/417032.jpg",
           "alt": "Img 2"
         },
-        "like": false
+        "like": false,
+        "alreadyWatched": false
       },
       {
-        "video": null,
+        "video": {
+          "src": null,
+          "thumbnail": ""
+        },
         "img": {
           "src": "https://lh3.googleusercontent.com/pw/AM-JKLV-k3_D29YpRF2UMv3ProFuZieWwCfTkelEfR9lajJv6JQQybWY_CgwvMfaWDZgruIhhwm0Lv6s_cMlyAfDaMBpBvtQztS-6szLEDYUuGQoOnnndLcvbCFWO_ae7NVScBrSWyYoMXevFltarjBlBWHQ=w279-h603-no",
           "alt": "Img 3"

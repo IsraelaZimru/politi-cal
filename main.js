@@ -73,10 +73,10 @@ class SlideStories {
         const HTMLcontent = data.stories.map(story => NewElement("img", [["src", story.img.src || ""], ["alt", story.img.alt || ""]]))
         const slideContainer = document.getElementById("slideContainer");
         slideContainer.append(...HTMLcontent)
-        // console.log(HTMLcontent);
 
-
-
+        // adding user info & update html
+        document.getElementById("avatar-img").src = data.user.avatar;
+        document.getElementById("user-name").innerText = data.user.name;
 
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);

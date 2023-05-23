@@ -3,10 +3,14 @@
 }
 
 body {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0px;
+
+  /* try fit height to screen */
+  height: fit-content;
 }
 
 img {
@@ -15,6 +19,7 @@ img {
 }
 
 /* general styling */
+
 .rnd-btn {
   background-color: white;
   margin-right: 10px;
@@ -184,4 +189,26 @@ footer {
 
 .report-btn img {
   height: 30px;
+}
+
+/* channel-info */
+#channel-info {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  z-index: 3;
+}
+
+#channel-info > * {
+  display: inline-block;
+  color: #03313b;
+}
+
+#channel-info p {
+  font-size: 20px;
+  margin-right: 7px;
+}
+
+#channel-info button {
+  border: 3px solid #31356e;
 }

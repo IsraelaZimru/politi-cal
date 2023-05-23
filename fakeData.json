@@ -9,6 +9,17 @@
       {
         "video": null,
         "img": {
+          "src": "https://www.chayot-barama.co.il/wp-content/uploads/2020/09/rodents_cat-1.jpg",
+          "alt": "Img 0"
+        },
+        "like": false,
+        "optional": {
+          "showBgFooter": false
+        }
+      },
+      {
+        "video": null,
+        "img": {
           "src": "https://i0.wp.com/macmagazine.com.br/wp-content/uploads/2018/09/14-wall-iphonexs02.png?ssl=1",
           "alt": "Img 1"
         },

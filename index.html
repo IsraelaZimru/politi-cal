@@ -11,6 +11,8 @@
     <link
       rel="stylesheet"
       href="style.css" />
+
+    <script src="main.js"></script>
     <title>Politi-Cal</title>
   </head>
   <body>
@@ -18,17 +20,37 @@
       <div
         data-slide="slide"
         class="slide">
+        <!-- here inserted images by JS -->
         <div
           id="slideContainer"
-          class="slide-items"></div>
+          class="slide-items">
+        </div>
 
         <nav class="slide-nav">
           <div class="slide-thumb"></div>
           <button class="slide-prev">Previous</button>
           <button class="slide-next">Next</button>
         </nav>
+        <footer>
+          <div class="footer-container">
+            <button class="wide-btn">דעת המפלגות בנושא</button>
+            <button class="rnd-btn">
+              <img
+                src="./images/share.png"
+                alt="share"
+                width="25px"
+                height="20px" />
+            </button>
+            <button class="rnd-btn">
+              <img
+                src="./images/heart.svg"
+                alt="like"
+                width="25px"
+                height="20px" />
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
-  <script src="main.js"></script>
 </html>

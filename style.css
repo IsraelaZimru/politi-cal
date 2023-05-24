@@ -212,3 +212,14 @@ footer {
 #channel-info button {
   border: 3px solid #31356e;
 }
+
+/* exit-btn */
+
+/* .exit-btn {
+  display: inline;
+  color: #31356e;
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: 15px;
+   grid-column: 1/1;
+} */

@@ -31,8 +31,20 @@ class SlideStories {
             item.classList.remove("active");
         });
         this.thumbItems[index].classList.add("active");
-        this.autoSlide();
-        // console.log(this.thumbItems.classList);
+
+        this.items.forEach((item, i) => {
+
+            if (i == index && item instanceof HTMLVideoElement) {
+                item.currentTime = 0;
+                item.play();
+                this.autoSlide(item.duration * 1000);
+                console.log("duration", item.duration);
+            } else {
+                item.pause && item.pause()
+            }
+        });
+
+
     }
 
     prev() {
@@ -63,14 +75,18 @@ class SlideStories {
         this.thumbItems = Array.from(this.thumb.children);
     }
 
-    autoSlide() {
+    autoSlide(duration = 5000) {
         clearTimeout(this.timeout);
-        this.timeout = setTimeout(this.next, 5000);
+        this.timeout = setTimeout(this.next, duration);
     }
 
     init() {
         //adding new slides elements:
-        const HTMLcontent = data.stories.map(story => NewElement("img", [["src", story.img.src || ""], ["alt", story.img.alt || ""]]))
+        const HTMLcontent = data.stories.map(story => {
+            const type = story.type === "image" ? "img" : "video";
+            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""]])
+        }
+        )
         const slideContainer = document.getElementById("slideContainer");
         slideContainer.append(...HTMLcontent)
 

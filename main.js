@@ -14,9 +14,13 @@ fetch("./fakeData.json")
 
 
 // -------------------------------------------------------------------------------
+
+
+
 class SlideStories {
     constructor(id) {
         this.slide = document.querySelector(`[data-slide=${id}]`);
+        this.videoBtn = document.getElementById("video-btn");
         this.active = 0;
         this.init();
     }
@@ -33,14 +37,16 @@ class SlideStories {
         this.thumbItems[index].classList.add("active");
 
         this.items.forEach((item, i) => {
-
             if (i == index && item instanceof HTMLVideoElement) {
-                item.currentTime = 0;
                 item.play();
+                this.videoBtn.style.display = "block";
+                item.currentTime = 0;
                 this.autoSlide(item.duration * 1000);
-                console.log("duration", item.duration);
+            } else if (item instanceof HTMLVideoElement) {
+                item.pause()
             } else {
-                item.pause && item.pause()
+
+                this.videoBtn.style.display = "none"
             }
         });
 
@@ -94,6 +100,28 @@ class SlideStories {
         document.getElementById("avatar-img").src = data.user.avatar;
         document.getElementById("user-name").innerText = data.user.name;
 
+        // activate video btn
+        this.videoBtn.addEventListener("click",
+            () => {
+                const currentVideo = this.items[this.active]
+                const btnImg = document.querySelector("#video-btn img")
+                if (currentVideo.paused) {
+                    currentVideo.play()
+                    btnImg.src = "./images/pause.svg";
+                    console.log("sss");
+                } else {
+                    currentVideo.pause();
+                    btnImg.src = "./images/play.svg";
+
+
+                }
+
+                this.items.forEach((item, i) => {
+                    if (this.active !== i && item instanceof HTMLVideoElement) item.pause()
+                })
+            });
+
+        // initiate more features:
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
         this.items = this.slide.querySelectorAll(".slide-items > *");

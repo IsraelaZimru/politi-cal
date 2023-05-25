@@ -1,15 +1,14 @@
 
 
 // importing data for stories
-let data = undefined;
+
 fetch("./fakeData.json")
     .then(response => {
         return response.json();
     })
     .then(([dbData]) => {
-        data = dbData;
-        console.log(data);
-        new SlideStories("slide");
+        console.log(dbData);
+        new SlideStories(dbData);
     })
 
 
@@ -18,9 +17,9 @@ fetch("./fakeData.json")
 
 
 class SlideStories {
-    constructor(id) {
-        this.slide = document.querySelector(`[data-slide=${id}]`);
-        this.videoBtn = document.getElementById("video-btn");
+    constructor(data) {
+        this.slide = document.querySelector(`[data-slide=slide]`);
+        this.data = data;
         this.active = 0;
         this.init();
     }
@@ -36,6 +35,10 @@ class SlideStories {
         });
         this.thumbItems[index].classList.add("active");
 
+        // Like button update:
+        this.likeUpdate()
+
+        // story with video:
         this.items.forEach((item, i) => {
             if (i == index && item instanceof HTMLVideoElement) {
                 item.play();
@@ -87,21 +90,7 @@ class SlideStories {
         this.timeout = setTimeout(this.next, duration);
     }
 
-    init() {
-        //adding new slides elements:
-        const HTMLcontent = data.stories.map(story => {
-            const type = story.type === "image" ? "img" : "video";
-            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""], ["type", "video/mp4"], ["poster", story.thumbnail || ""]])
-        }
-        )
-        const slideContainer = document.getElementById("slideContainer");
-        slideContainer.append(...HTMLcontent)
-
-        // adding user info & update html
-        document.getElementById("avatar-img").src = data.user.avatar;
-        document.getElementById("user-name").innerText = data.user.name;
-
-        // activate video btn
+    resetVideos() {
         this.videoBtn.addEventListener("click",
             () => {
                 const currentVideo = this.items[this.active]
@@ -109,7 +98,6 @@ class SlideStories {
                 if (currentVideo.paused) {
                     currentVideo.play()
                     btnImg.src = "./images/pause.svg";
-                    console.log("sss");
                 } else {
                     currentVideo.pause();
                     btnImg.src = "./images/play.svg";
@@ -121,18 +109,44 @@ class SlideStories {
                     if (this.active !== i && item instanceof HTMLVideoElement) item.pause()
                 })
             });
+    }
+
+    likeUpdate() {
+        // todo - send db like requset !!
+
+        this.likeBtnImg.src = this.data.stories[this.active].like ? "./images/heart-white.svg" : "./images/heart.svg";
+        this.likeBtn.style.backgroundColor = this.data.stories[this.active].like ? "#31356E" : "white";
+    }
+
+    init() {
+        //adding new slides elements:
+        const HTMLcontent = this.data.stories.map(story => {
+            const type = story.type === "image" ? "img" : "video";
+            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""], ["type", "video/mp4"], ["poster", story.thumbnail || ""]])
+        }
+        )
+        const slideContainer = document.getElementById("slideContainer");
+        slideContainer.append(...HTMLcontent)
+
+        // adding user info & update html
+        document.getElementById("avatar-img").src = this.data.user.avatar;
+        document.getElementById("user-name").innerText = this.data.user.name;
+
 
         // initiate more features:
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
         this.items = this.slide.querySelectorAll(".slide-items > *");
         this.thumb = this.slide.querySelector(".slide-thumb");
+        this.videoBtn = document.getElementById("video-btn");
+        this.likeBtnImg = document.getElementById("like-btn-img");
+        this.likeBtn = document.getElementById("like-btn");
         this.addThumbItems();
         this.activeSlide(0);
         this.addNavigation();
+        this.resetVideos();
     }
 }
-
 
 // ------------------------------------------------
 // helperFunctions:

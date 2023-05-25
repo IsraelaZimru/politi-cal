@@ -156,7 +156,7 @@ video {
   background: #31356e;
   border-radius: 3px;
   transform: translateX(-100%);
-  animation: thumb 5s forwards linear;
+  animation: thumb forwards linear;
 }
 
 @keyframes thumb {

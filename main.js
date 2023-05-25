@@ -40,6 +40,7 @@ class SlideStories {
             if (i == index && item instanceof HTMLVideoElement) {
                 item.play();
                 this.videoBtn.style.display = "block";
+                document.querySelector("#video-btn img").src = "./images/pause.svg";
                 item.currentTime = 0;
                 this.autoSlide(item.duration * 1000);
             } else if (item instanceof HTMLVideoElement) {
@@ -90,7 +91,7 @@ class SlideStories {
         //adding new slides elements:
         const HTMLcontent = data.stories.map(story => {
             const type = story.type === "image" ? "img" : "video";
-            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""]])
+            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""], ["type", "video/mp4"], ["poster", story.thumbnail || ""]])
         }
         )
         const slideContainer = document.getElementById("slideContainer");

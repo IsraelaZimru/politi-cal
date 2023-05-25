@@ -28,6 +28,14 @@
         "alt": "Img 2",
         "like": false,
         "alreadyWatched": false
+      },
+      {
+        "type": "video",
+        "src": "./videos/example2.mp4",
+        "thumbnail": "",
+        "alt": "Img 2",
+        "like": false,
+        "alreadyWatched": false
       }
     ]
   }

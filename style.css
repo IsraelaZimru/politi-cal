@@ -17,7 +17,11 @@ img {
   max-width: 100%;
   display: block;
 }
-
+video {
+  object-fit: cover;
+  width: 100vw;
+  min-height: 100vh;
+}
 /* general styling */
 
 .rnd-btn {

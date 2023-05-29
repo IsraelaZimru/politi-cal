@@ -45,7 +45,8 @@ class SlideStories {
                 this.videoBtn.style.display = "block";
                 document.querySelector("#video-btn img").src = "./images/pause.svg";
                 item.currentTime = 0;
-                this.autoSlide(item.duration * 1000);
+                item.addEventListener("ended", this.next)
+                // this.autoSlide(item.duration * 1000);
             } else if (item instanceof HTMLVideoElement) {
                 item.pause()
             } else {

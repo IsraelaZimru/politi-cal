@@ -180,7 +180,9 @@ footer {
 }
 
 .footer-container {
-  max-width: 900px;
+  max-width: 400px;
+  width: inherit;
+  margin: 0px 15px;
   display: inline-flex;
   justify-content: space-around;
   align-items: center;

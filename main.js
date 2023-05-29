@@ -128,7 +128,7 @@ class SlideStories {
         //adding new slides elements:
         const HTMLcontent = this.data.stories.map(story => {
             const type = story.type === "image" ? "img" : "video";
-            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""], ["type", "video/mp4"], ["poster", story.thumbnail || ""], ["webkit-playsinline", true], ["playsinline", true], ["controls", false]]
+            return NewElement(type, [["src", story.src || ""], ["alt", story.alt || ""], ["type", "video/mp4"], ["poster", story.thumbnail || ""], ["webkit-playsinline", true], ["playsinline", true]]
             )
         }
         )

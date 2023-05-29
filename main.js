@@ -58,6 +58,7 @@ class SlideStories {
     }
 
     prev() {
+        clearTimeout(this.timeout);
         if (this.active > 0) {
             this.activeSlide(this.active - 1);
         } else {
@@ -66,6 +67,7 @@ class SlideStories {
     }
 
     next() {
+        clearTimeout(this.timeout);
         if (this.active < this.items.length - 1) {
             this.activeSlide(this.active + 1);
         } else {
@@ -85,7 +87,7 @@ class SlideStories {
         this.thumbItems = Array.from(this.thumb.children);
     }
 
-    autoSlide(duration = 5000) {
+    autoSlide(duration = 0) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(this.next, duration);
     }

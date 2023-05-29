@@ -36,7 +36,8 @@ class SlideStories {
         this.thumbItems[index].classList.add("active");
 
         // Like button update:
-        this.likeUpdate()
+        this.likeBtnImg.src = this.data.stories[this.active].like ? "./images/heart-white.svg" : "./images/heart.svg";
+        this.likeBtn.style.backgroundColor = this.data.stories[this.active].like ? "#31356E" : "white";
 
         // story with video:
         this.items.forEach((item, i) => {
@@ -98,6 +99,7 @@ class SlideStories {
             () => {
                 const currentVideo = this.items[this.active]
                 const btnImg = document.querySelector("#video-btn img")
+                btnImg.classList.toggle("m-10");
                 if (currentVideo.paused) {
                     currentVideo.play()
                     btnImg.src = "./images/pause.svg";
@@ -116,6 +118,7 @@ class SlideStories {
 
     likeUpdate() {
         // todo - send db like requset !!
+        this.data.stories[this.active].like = !this.data.stories[this.active].like;
 
         this.likeBtnImg.src = this.data.stories[this.active].like ? "./images/heart-white.svg" : "./images/heart.svg";
         this.likeBtn.style.backgroundColor = this.data.stories[this.active].like ? "#31356E" : "white";
@@ -147,6 +150,7 @@ class SlideStories {
         this.likeBtn = document.getElementById("like-btn");
         this.addThumbItems();
         this.activeSlide(0);
+        this.likeBtn.addEventListener("click", this.likeUpdate.bind(this))
         this.addNavigation();
         this.resetVideos();
     }

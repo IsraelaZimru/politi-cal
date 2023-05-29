@@ -39,7 +39,6 @@ video {
 
 .rnd-btn img {
   display: inline-block;
-  margin: auto;
 }
 
 .wide-btn {
@@ -246,5 +245,9 @@ footer {
 
 #video-btn img {
   height: 20px;
-  margin: 0px;
+}
+
+.m-10 {
+  margin-left: 3px;
+
 }

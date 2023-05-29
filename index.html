@@ -18,16 +18,23 @@
   <body>
     <!-- user/channel info -->
     <div id="channel-info">
-      <p id="user-name">...</p>
-      <button class="rnd-btn avatar-btn">
-        <!-- default img src -->
-        <img
-          id="avatar-img"
-          src="https://cdn.onlinewebfonts.com/svg/img_173956.png"
-          alt="share"
-          width="25px"
-          height="20px" />
-      </button>
+      <a
+        href="https://www.politi-cal.org/"
+        id="exit-btn"
+        >X</a
+      >
+      <div>
+        <p id="user-name">...</p>
+        <button class="rnd-btn avatar-btn">
+          <!-- default img src -->
+          <img
+            id="avatar-img"
+            src="https://cdn.onlinewebfonts.com/svg/img_173956.png"
+            alt="share"
+            width="25px"
+            height="20px" />
+        </button>
+      </div>
     </div>
 
     <!-- stories -->
@@ -42,9 +49,6 @@
 
         <nav class="slide-nav">
           <div class="slide-thumb"></div>
-          <!-- <div>
-            <p class="exit-btn">X</p>
-          </div> -->
 
           <button class="slide-prev">Previous</button>
           <button class="slide-next">Next</button>
@@ -74,7 +78,10 @@
                 width="25px"
                 height="20px" />
             </button>
-            <button class="rnd-btn" id="like-btn" onclick="likeUpdate()">
+            <button
+              class="rnd-btn"
+              id="like-btn"
+              onclick="likeUpdate()">
               <img
                 src="./images/heart.svg"
                 id="like-btn-img"

@@ -199,17 +199,19 @@ footer {
 /* channel-info */
 #channel-info {
   position: absolute;
-  right: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0px 15px;
+  width: 100vw;
   top: 50px;
   z-index: 3;
 }
 
-#channel-info > * {
+#channel-info p {
   display: inline-block;
   color: #03313b;
-}
-
-#channel-info p {
   font-size: 20px;
   margin-right: 7px;
 }
@@ -220,14 +222,16 @@ footer {
 
 /* exit-btn */
 
-/* .exit-btn {
-  display: inline;
-  color: #31356e;
-  font-weight: 600;
-  font-size: 17px;
-  margin-left: 15px;
-   grid-column: 1/1;
-} */
+#exit-btn {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#exit-btn:hover {
+  font-size: 25px;
+}
 
 /* video-btn */
 

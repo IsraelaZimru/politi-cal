@@ -238,7 +238,7 @@ footer {
 
 #video-btn {
   position: absolute;
-  top: -140px;
+  top: -130px;
   left: 20px;
   /* display: none; */
 }
@@ -247,7 +247,19 @@ footer {
   height: 20px;
 }
 
+/* audio-btn */
+
+#audio-btn {
+  position: absolute;
+  top: -190px;
+  left: 20px;
+  /* display: none; */
+}
+
+#audio-btn img {
+  height: 25px;
+}
+
 .m-10 {
   margin-left: 3px;
-
 }

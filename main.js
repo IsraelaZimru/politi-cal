@@ -116,6 +116,27 @@ class SlideStories {
             });
     }
 
+    resetAudio() {
+        this.audioBtn.addEventListener("click",
+            () => {
+                const currentVideo = this.items[this.active]
+                const btnImg = document.querySelector("#audio-btn img")
+                if (currentVideo.muted) {
+                    currentVideo.muted = true;
+                    btnImg.src = "./images/mute.svg";
+                } else {
+                    currentVideo.muted = false;
+                    btnImg.src = "./images/not_mute.svg";
+
+
+                }
+
+                this.items.forEach((item, i) => {
+                    if (this.active !== i && item instanceof HTMLVideoElement) item.pause()
+                })
+            });
+    }
+
     likeUpdate() {
         // todo - send db like requset !!
         this.data.stories[this.active].like = !this.data.stories[this.active].like;
@@ -146,6 +167,7 @@ class SlideStories {
         this.items = this.slide.querySelectorAll(".slide-items > *");
         this.thumb = this.slide.querySelector(".slide-thumb");
         this.videoBtn = document.getElementById("video-btn");
+        this.audioBtn = document.getElementById("audio-btn");
         this.likeBtnImg = document.getElementById("like-btn-img");
         this.likeBtn = document.getElementById("like-btn");
         this.addThumbItems();
@@ -153,6 +175,7 @@ class SlideStories {
         this.likeBtn.addEventListener("click", this.likeUpdate.bind(this))
         this.addNavigation();
         this.resetVideos();
+        this.resetAudio()
     }
 }
 

@@ -23,7 +23,7 @@
       },
       {
         "type": "video",
-        "src": "./videos/example.mp4",
+        "src": "https://video.wixstatic.com/video/7ce4e9_468d869a2f4a4f93a1ab559a6bfb076f/360p/mp4/file.mp4",
         "thumbnail": "",
         "alt": "Img 2",
         "like": false,
@@ -31,7 +31,7 @@
       },
       {
         "type": "video",
-        "src": "./videos/example2.mp4",
+        "src": "https://video.wixstatic.com/video/7ce4e9_a9317ad9522c4eaaa711b221a3ff2518/480p/mp4/file.mp4",
         "thumbnail": "",
         "alt": "Img 2",
         "like": false,

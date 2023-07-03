@@ -36,7 +36,7 @@ class SlideStories {
         this.thumbItems[index].classList.add("active");
 
         // Like button update:
-        this.likeBtnImg.src = this.data.stories[this.active].like ? "./images/heart-white.svg" : "./images/heart.svg";
+        this.likeBtnImg.src = this.data.stories[this.active].like ? "https://static.wixstatic.com/shapes/7ce4e9_eb5a29ec85e8458ea116d432812424b9.svg" : "https://static.wixstatic.com/shapes/7ce4e9_992298828a284b3c86d1355056e8bb9a.svg";
         this.likeBtn.style.backgroundColor = this.data.stories[this.active].like ? "#31356E" : "white";
 
         // story with video:
@@ -44,7 +44,7 @@ class SlideStories {
             if (i == index && item instanceof HTMLVideoElement) {
                 item.play();
                 this.videoBtn.style.display = "block";
-                document.querySelector("#video-btn img").src = "./images/pause.svg";
+                document.querySelector("#video-btn img").src = "https://static.wixstatic.com/shapes/7ce4e9_3b0a624b75664888b22bb44d3da8ad44.svg";
                 item.currentTime = 0;
                 item.addEventListener("ended", this.next)
                 // this.autoSlide(item.duration * 1000);
@@ -102,10 +102,10 @@ class SlideStories {
                 btnImg.classList.toggle("m-10");
                 if (currentVideo.paused) {
                     currentVideo.play()
-                    btnImg.src = "./images/pause.svg";
+                    btnImg.src = "https://static.wixstatic.com/shapes/7ce4e9_3b0a624b75664888b22bb44d3da8ad44.svg";
                 } else {
                     currentVideo.pause();
-                    btnImg.src = "./images/play.svg";
+                    btnImg.src = "https://static.wixstatic.com/shapes/7ce4e9_72a25fa15911459484eb52ca67d8ccdc.svg";
 
 
                 }
@@ -141,7 +141,7 @@ class SlideStories {
         // todo - send db like requset !!
         this.data.stories[this.active].like = !this.data.stories[this.active].like;
 
-        this.likeBtnImg.src = this.data.stories[this.active].like ? "./images/heart-white.svg" : "./images/heart.svg";
+        this.likeBtnImg.src = this.data.stories[this.active].like ? "https://static.wixstatic.com/shapes/7ce4e9_eb5a29ec85e8458ea116d432812424b9.svg" : "https://static.wixstatic.com/shapes/7ce4e9_992298828a284b3c86d1355056e8bb9a.svg";
         this.likeBtn.style.backgroundColor = this.data.stories[this.active].like ? "#31356E" : "white";
     }
 

@@ -44,6 +44,7 @@ class SlideStories {
             if (i == index && item instanceof HTMLVideoElement) {
                 item.play();
                 this.videoBtn.style.display = "block";
+                this.audioBtn.style.display = "block";
                 document.querySelector("#video-btn img").src = "https://static.wixstatic.com/shapes/7ce4e9_3b0a624b75664888b22bb44d3da8ad44.svg";
                 item.currentTime = 0;
                 item.addEventListener("ended", this.next)
@@ -52,7 +53,8 @@ class SlideStories {
                 item.pause()
             } else {
 
-                this.videoBtn.style.display = "none"
+                this.videoBtn.style.display = "none";
+                this.audioBtn.style.display = "none";
             }
         });
 
@@ -122,11 +124,11 @@ class SlideStories {
                 const currentVideo = this.items[this.active]
                 const btnImg = document.querySelector("#audio-btn img")
                 if (currentVideo.muted) {
-                    currentVideo.muted = true;
-                    btnImg.src = "./images/mute.svg";
-                } else {
                     currentVideo.muted = false;
                     btnImg.src = "./images/not_mute.svg";
+                } else {
+                    currentVideo.muted = true;
+                    btnImg.src = "./images/mute.svg";
 
 
                 }

@@ -1,6 +1,4 @@
-
-
-// importing data for stories
+// importing data for stories - Local
 
 fetch("./fakeData.json")
     .then(response => {
@@ -10,10 +8,19 @@ fetch("./fakeData.json")
         console.log(dbData);
         new SlideStories(dbData);
     })
-
-
 // -------------------------------------------------------------------------------
+// importing data for stories - WIX
 
+//     window.addEventListener('message', (event) => {
+//     console.log("Got a massage from WIX")
+//     let data;
+//     if (event.data) {
+//         data = event.data['data'];
+//         console.log(data);
+//         new SlideStories(dbData);
+//     };    
+// });
+// -------------------------------------------------------------------------------
 
 
 class SlideStories {
